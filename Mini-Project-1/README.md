@@ -201,3 +201,9 @@ This app is a small blog-style website built with Express and EJS. It uses route
 - delete a post from a form submission
 
 The important detail is that the server is rendering EJS templates into HTML pages, not sending raw JSON responses back to the browser.
+
+## Challenges Faced
+
+For my initial challenges a lot of what I struggled with was the conceptual. How does Node relate to Express? Where does EJS factor into dynamic HTML generation? How does HTTP work with routing in Express?
+It turns out the logic for the code was relatively simple to understand a lot of challenges came from looking up the syntax for what I wanted to do in the code. Some late stage struggles was my pacing of time,
+I wish I allocated more resources to this project I wasn't able to make a very "pretty" app, and although functionally working I could see a lot of fun to be had expanding on some of the features.
