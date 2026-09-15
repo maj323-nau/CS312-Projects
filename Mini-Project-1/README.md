@@ -58,18 +58,18 @@ app.get("/", (req, res) => {
 ```
 
 ### 4. Viewing all posts
-The route `/posts` returns the full array of posts as JSON:
+The route `/posts` finds the posts data and renders an EJS template, which becomes HTML in the browser:
 
 ```javascript
 app.get("/posts", (req, res) => {
-    res.json(posts);
+    res.render("posts", { posts });
 });
 ```
 
-This is useful for APIs because it sends structured data instead of plain text.
+Instead of sending raw JSON, the server passes the `posts` array into a template and the browser receives HTML.
 
 ### 5. Viewing one post by ID
-The route `/posts/:id` reads the ID from the URL and finds the matching post:
+The route `/posts/:id` reads the ID from the URL, finds the matching post, and renders a detail page:
 
 ```javascript
 app.get("/posts/:id", (req, res) => {
@@ -80,11 +80,11 @@ app.get("/posts/:id", (req, res) => {
         return res.status(404).send("Post not found");
     }
 
-    res.json(post);
+    res.render("post", { post });
 });
 ```
 
-If no post matches the ID, the app sends a 404 error.
+If no post matches the ID, the app still sends a 404 error.
 
 ### 6. Creating a new post
 The app uses `express.urlencoded()` so form data can be read from POST requests:
@@ -113,7 +113,7 @@ app.post("/posts", (req, res) => {
 This reads the form values, creates a new object, and adds it to the array.
 
 ### 7. Editing a post
-When the user visits `/posts/:id/edit`, the app finds the matching post and renders an HTML form:
+When the user visits `/posts/:id/edit`, the app finds the matching post and renders an HTML form using EJS or a template string:
 
 ```javascript
 app.get("/posts/:id/edit", (req, res) => {
@@ -124,16 +124,11 @@ app.get("/posts/:id/edit", (req, res) => {
         return res.status(404).send("Post not found");
     }
 
-    res.send(`
-        <h1>Edit Post</h1>
-        <form action="/posts/${post.id}/edit" method="POST">
-            ...
-        </form>
-    `);
+    res.render("edit", { post });
 });
 ```
 
-Then a POST route updates the post:
+Then a POST route updates the post in memory:
 
 ```javascript
 app.post("/posts/:id/edit", (req, res) => {
@@ -196,11 +191,13 @@ These pages are rendered using EJS templates, which let JavaScript values appear
 
 ## Summary
 
-This app is a small blog-style API and website built with Express. It uses routes to:
+This app is a small blog-style website built with Express and EJS. It uses routes to:
 
-- show data
-- create data
-- update data
-- delete data
+- show a home page
+- list all posts in an HTML page
+- show one post on its own page
+- create a post from an HTML form
+- edit a post from an HTML form
+- delete a post from a form submission
 
-It is a simple example of how a backend server handles requests and responds with content.
+The important detail is that the server is rendering EJS templates into HTML pages, not sending raw JSON responses back to the browser.
