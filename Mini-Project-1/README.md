@@ -13,9 +13,3 @@ A simple, lightweight blogging web application built for local development using
 - **Runtime:** Node.js
 - **Framework:** Express.js
 - **Templating Engine:** EJS
-
-## Getting Started
-
-### Prerequisites
-
-Make sure you have Node.js and npm installed on your local machine.
