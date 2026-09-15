@@ -13,17 +13,9 @@ A simple, lightweight blogging web application built for local development using
 - **Runtime:** Node.js
 - **Framework:** Express.js
 - **Templating Engine:** EJS
-- **Styling:** CSS
 
 ## Getting Started
 
 ### Prerequisites
 
 Make sure you have Node.js and npm installed on your local machine.
-
-### Installation & Running Locally
-
-1. Clone or download this repository.
-2. Navigate to the project directory in your terminal:
-   ```bash
-   cd blog-app
