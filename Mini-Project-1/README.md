@@ -1,7 +1,6 @@
 # Rudimentary Blog App
 
-A simple, lightweight blogging web application built for local development using Node.js, Express, and EJS. This project demonstrates foundational backend development concepts, dynamic server-side rendering, and full CRUD (Create, Read, Update, Delete) functionality.
-
+A simple, lightweight blogging web application built for local development using Node.js, Express, and EJS. 
 ## Features
 
 - **Dynamic HTML Rendering:** Leverages EJS (Embedded JavaScript templating) to generate HTML pages dynamically on the server.
