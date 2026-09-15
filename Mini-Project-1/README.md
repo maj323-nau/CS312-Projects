@@ -49,11 +49,11 @@ When the server starts, the browser can access pages at:
 - http://localhost:3000/posts
 
 ### 3. Home route
-The root route responds with a simple string:
+The root route responds with the index home page.
 
 ```javascript
 app.get("/", (req, res) => {
-    res.send("This is the root URL");
+    res.render("index");
 });
 ```
 
