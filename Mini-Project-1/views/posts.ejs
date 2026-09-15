@@ -1,0 +1,46 @@
+<!-- Posts Page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Blog Posts</title>
+</head>
+
+<body>
+
+<h1>Create a New Post</h1>
+
+<form action="/posts" method="POST">
+    <label>Title:</label>
+    <input type="text" name="title">
+
+    <br><br>
+
+    <label>Author:</label>
+    <input type="text" name="author">
+
+    <br><br>
+
+    <label>Content:</label>
+    <textarea name="content"></textarea>
+
+    <br><br>
+
+    <button type="submit">Create Post</button>
+</form>
+
+<hr>
+
+<ul>
+    <% posts.forEach(post => { %>
+        <li>
+            <h2>
+                <a href="/posts/<%= post.id %>">
+                    <%= post.title %>
+                </a>
+            </h2>
+        </li>
+    <% }); %>
+</ul>
+
+</body>
+</html>

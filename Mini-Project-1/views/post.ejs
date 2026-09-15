@@ -1,0 +1,24 @@
+<!-- Post Page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= post.title %></title>
+</head>
+<body>
+    <h1><%= post.title %></h1>
+    <p><strong>Author:</strong> <%= post.author %></p>
+    <p><strong>Content:</strong> <%= post.content %></p>
+
+    <p>
+        <a href="/posts">Back to All Posts</a>
+    </p>
+
+    <p>
+        <a href="/posts/<%= post.id %>/edit">Edit Post</a>
+    </p>
+
+    <form action="/posts/<%= post.id %>/delete" method="POST">
+        <button type="submit">Delete Post</button>
+    </form>
+</body>
+</html>
