@@ -1,0 +1,35 @@
+/* Every element on page */
+* {
+  /* Padding */
+  box-sizing: border-box;
+}
+
+/* Styling the whole visible page. */
+body {
+  margin: 0; 
+  padding: 2rem; 
+  color: #222;
+  background: #f5f5f2;
+  font-family: Arial, sans-serif;
+}
+
+/* Styling the primary content area. */
+main {
+  max-width: 40rem; 
+  margin: 3rem auto; 
+}
+
+/* Arranging label, input, and button. */
+form {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 0.75rem; 
+}
+
+/* A comma lets one rule can style multiple elements */
+input,
+button {
+  padding: 0.65rem 0.8rem;
+  font: inherit; /* Use the same font settings as the surrounding page. */
+}
