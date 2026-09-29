@@ -1,6 +1,6 @@
 # Meal Finder
 
-A starter Express app for learning how a browser form, an Express server, and EJS templates work together. Axios is included for the planned TheMealDB API request.
+Meal Finder is a small Express application that lets a user search for meals by name. It demonstrates how an HTML form, an Express route, an external API request, and an EJS view work together. Search results come from [TheMealDB](https://www.themealdb.com/).
 
 ## Getting Started
 
@@ -16,28 +16,27 @@ Start the server:
 npm start
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) in a browser. During development, you can use `npm run dev` to restart the server automatically when files change.
+Open [http://localhost:3000](http://localhost:3000) in a browser. For development, run `npm run dev` to restart the server when files change.
 
-## What `package.json` Does
+## How It Works
 
-`package.json` is the project's setup and information file. npm reads it to identify the project, install its dependencies, and run its scripts. It must use valid JSON, which does not support comments, so these explanations are kept here instead.
+1. The home page displays a form for entering a meal name.
+2. Submitting the form sends the search term as a query parameter to the `/search` route.
+3. The Express route uses Axios to request matching meals from TheMealDB.
+4. The EJS page displays each returned meal's thumbnail, name, category, and cuisine area.
+5. If no meals are found, the page shows a no-results message. If the API request fails, it shows a general error message.
 
-- `name`: The project's npm name, `mini-project-2`.
-- `version`: The current project version, `1.0.0`.
-- `private`: Prevents accidentally publishing this project to the npm registry.
-- `description`: A short summary of the project.
-- `main`: Names `app.js` as the main file if another program imports this project.
-- `scripts`: Defines commands that can be run with npm. `npm start` runs `node app.js`; `npm run dev` runs it with Node's watch mode.
-- `dependencies`: Lists packages the project needs. Express handles web requests, EJS renders page templates, and Axios is included for making HTTP requests to TheMealDB.
+The app uses a GET request for searching, so the search term appears in the URL. The search requires a network connection to reach TheMealDB.
 
-The `^` before a dependency version allows npm to install compatible updates that do not change the major version. `npm install` downloads dependencies into `node_modules` and creates or updates `package-lock.json` to record the exact installed versions.
+## Project Files
 
-## Project Folders
+- `app.js`: Configures Express, serves the home page, handles meal searches, requests data from TheMealDB, and starts the server.
+- `views/index.ejs`: Contains the search form, error messages, and EJS loop that renders meal results.
+- `public/css/style.css`: Styles the page.
+- `package.json`: Lists the Express, EJS, and Axios dependencies and the `start` and `dev` scripts.
+- `package-lock.json`: Records the exact dependency versions installed by npm.
 
-- `app.js`: Configures Express, serves the home page, and starts the server.
-- `views/`: Holds EJS page templates, including `index.ejs`.
-- `public/`: Holds browser-accessible files, such as `css/style.css`.
-- `routes/`: An optional place to move routes into separate files as the app grows.
-- `.gitignore`: Lists local files and folders Git should not track, such as `node_modules/` and `.env`.
+## npm Scripts
 
-The home page currently displays a meal search form. The `/search` route and TheMealDB API request still need to be implemented.
+- `npm start`: Runs the app with Node.js.
+- `npm run dev`: Runs the app in watch mode, restarting it when files change.

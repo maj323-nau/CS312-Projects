@@ -22,6 +22,26 @@
       <!-- Submitting this button sends the form to /search. -->
       <button type="submit">Search</button>
     </form>
+
+    <section>
+      <% if (error) { %>
+        <p style="color: red;"><%= error %></p>
+      <% } %>
+      
+      <%# Show the results list when the route provides a meals value. %>
+      <% if (meals) { %>
+        <ul>
+          <%# Render each meal's thumbnail, name, category, and area. %>
+          <% meals.forEach(function(meal) { %>
+            <li>
+              <img src="<%= meal.strMealThumb %>" alt="<%= meal.strMeal %>" width="150">
+              <h3><%= meal.strMeal %></h3>
+              <p><%= meal.strCategory %> &mdash; <%= meal.strArea %></p>
+            </li>
+          <% }); %>
+        </ul>
+      <% } %>
+    </section>
   </main>
 </body>
 
