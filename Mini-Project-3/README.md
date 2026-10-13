@@ -218,22 +218,6 @@ Use parameterized SQL for all database operations. Enforce ownership in the serv
 
 This order validates the database and existing CRUD flow before adding authentication complexity. Registration and login can then build on working persistence, while session handling and ownership checks are added after a reliable authenticated identity exists. Keep intermediate phases local and do not treat the application as ready for use until write routes are protected.
 
-# Guidance For Future AI Assistants
-
-Implement this project incrementally. When helping implement code:
-
-1. Preserve the existing Express + EJS architecture.
-2. Do not rewrite the application from scratch.
-3. Do not introduce React, Vue, or Angular.
-4. Prefer small, testable changes.
-5. Complete one phase before moving to the next.
-6. Reference Mini-Project-1 before refactoring behavior.
-7. Preserve existing routes whenever practical.
-8. Explain code changes before making them.
-9. Prioritize assignment requirements over architectural improvements.
-
-The purpose of this README is to provide implementation context for future tutoring and development sessions: what exists, what must be built, which decisions are settled, and what order to follow.
-
 # Current Development Status
 
 **Current status:** Phase 1 complete.
@@ -251,31 +235,6 @@ The PostgreSQL 18 server is running, the application database has been created, 
 
 The project should move from the current app setup into replacing in-memory post handling with parameterized PostgreSQL queries while preserving the existing Express + EJS behavior.
 
-# AI Tutor Working Agreement
-
-## Development Philosophy
-
-- Implement one phase at a time.
-- Do not skip ahead to future phases.
-- Do not rewrite working code unnecessarily.
-- Prefer incremental changes over large refactors.
-- Preserve behavior from Mini-Project-1 unless a project requirement explicitly changes it.
-
-## Tutoring Expectations
-
-When assisting with implementation:
-
-1. Explain the goal of the current phase before writing code.
-2. Explain how the code relates to the existing Mini-Project-1 architecture.
-3. Provide code in small, reviewable increments.
-4. Explain why a change is needed before implementing it.
-5. Verify completion criteria before moving to the next phase.
-6. Reference the Recommended Build Order when deciding what to implement next.
-7. If a requirement conflicts with a previous implementation decision, call out the conflict before making changes.
-
-## Phase Discipline
-
-Do not begin a later phase until the current phase's completion criteria have been satisfied.
 
 **Current implementation target:** Phase 2 - PostgreSQL CRUD migration.
 
@@ -286,4 +245,3 @@ Do not begin a later phase until the current phase's completion criteria have be
 - Post data remains available across server restarts.
 - Existing Express + EJS behavior remains intact while data persistence moves to the database.
 
-This agreement is intended to help future AI assistants act as tutors rather than autonomous code generators.
