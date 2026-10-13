@@ -1,0 +1,21 @@
+{
+  "name": "cs312-projects",
+  "version": "1.0.0",
+  "description": "Projects for my CS312 Web Programming II class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maj323-nau/CS312-Projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/maj323-nau/CS312-Projects/issues"
+  },
+  "homepage": "https://github.com/maj323-nau/CS312-Projects#readme"
+}
