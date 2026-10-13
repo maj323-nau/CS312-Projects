@@ -1,5 +1,3 @@
-# Claude Implementation Brief
-
 ## Project Overview
 
 Mini-Project-3 evolves the Mini-Project-1 blog into a persistent, multi-user application. This brief describes the current implementation, the target behavior, the decisions already made, and an incremental path for implementing the changes.
