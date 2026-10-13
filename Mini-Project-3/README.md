@@ -220,52 +220,6 @@ This order validates the database and existing CRUD flow before adding authentic
 
 # Current Development Status
 
-**Current status:** Phases 1, 2, 3, 4, 5, and 6 complete; Phase 7 is next.
+**Current status:** Phases 1, 2, 3, 4, 5, 6, and 7 complete.
 
-The PostgreSQL 18 server is running, the application database has been created, and the required schema is recorded in `schema.sql`. The local environment configuration lives in `.env` and is intentionally excluded from git; `db.js` loads that configuration and exports the PostgreSQL connection pool. Phase 2 is complete: all post CRUD reads and writes use PostgreSQL, no post data remains in an in-memory array, and post data survives an application restart.
-
-**Completed Phase 2 Deliverables:**
-- All post CRUD reads and writes use PostgreSQL.
-- No post data remains stored in the in-memory array.
-- Post data survives an application restart.
-
-**Completed Phase 3 Deliverables:**
-- Visitors can register with a username, unique email, and password.
-- Passwords are stored only as bcrypt hashes.
-- Duplicate email addresses and invalid registration input are handled clearly.
-
-**Completed Phase 4 Deliverables:**
-- Registered users can submit their email and password to log in.
-- Passwords are verified against stored bcrypt hashes; valid credentials succeed and invalid email/password pairs do not authenticate.
-- The stored password hash is not exposed or returned by the login flow.
-
-**Completed Phase 5 Deliverables:**
-- A successful login establishes a session that identifies the user on later requests.
-- Session state is available to protected routes and relevant EJS views.
-- Logging out invalidates the session and returns the user to guest state.
-
-**Completed Phase 6 Deliverables:**
-- Guests cannot create, edit, or delete posts; write routes require a valid authenticated session.
-- Authenticated users can create posts with `author_id` assigned from the logged-in session user.
-- Edit and delete routes enforce ownership checks before allowing any update or delete, including direct-form tampering attempts.
-- Both the route-level ownership checks and SQL `WHERE author_id = $n` safeguards protect against cross-user access.
-
-**Next phase:** Phase 7 - EJS updates and testing.
-
-Update forms and navigation to reflect guest and authenticated states, then verify guest browsing, registration, login/logout, CRUD, and ownership-denial flows end to end.
-
-
-**Current implementation target:** Phase 7 - EJS updates and testing.
-
-**Completed phase success criteria:**
-
-- Guests cannot create, edit, or delete posts.
-- Authenticated users can create posts attributed to their own account.
-- A user cannot edit or delete another user's post, including by directly submitting a request.
-- Existing Express + EJS behavior remains intact.
-
-**Next phase focus:**
-
-- Update EJS templates and navigation for guest vs. authenticated states.
-- Confirm the complete end-to-end workflow for browsing, registration, login/logout, CRUD, and cross-user access denial.
 
